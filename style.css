@@ -1,5 +1,5 @@
 * {
-    display: flex;
+    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,7 +14,8 @@ body {
     background-color: #202020;
 }
 
-.div {
+.calculator {
+    display: flex;
     position: relative;
     min-width: 300px;
     min-height: 400px;
@@ -24,13 +25,17 @@ body {
                 10px 10px 70px rgba(0, 0, 0, 0.25),
                 inset -5px -5px 15px rgba(0, 0, 0, 0.25),
                     inset 5px 5px 15px rgba(0, 0, 0, 0.25);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
 
 #display {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     grid-column: span 4;
     height: 100px;
-    width: calc(100% - 20px);
+    width: 100%;
     left: 10px;
     border: none;
     outline: none;
@@ -42,10 +47,10 @@ body {
     padding: 10px;
     font-size: 2em;
 }
-#display:active {
+.btn:active {
     filter: brightness(1.5);
 }
-#display:before {
+#display::before {
     content: "";
   position: absolute;
   top: 3px;
@@ -62,27 +67,15 @@ body {
 }
 
 .buttons {
-   color: #fff;
-  position: relative;
-  display: grid;
-  width: 80px;
-  place-items: center;
-  margin: 8px;
-  height: 80px;
-  background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
-  box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
-    inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
-    10px 20px 25px rgba(0, 0, 0, 0.4);
-  user-select: none;
-  cursor: pointer;
-  font-weight: 400;
-  border-radius: 10px; 
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 10px;
 }
 .btn {
-    color: #fff;
+  color: #fff;
   position: relative;
-  display: grid;
-  width: 80px;
+  display: flexbox;
+  width: 60px;
   place-items: center;
   margin: 8px;
   height: 80px;
@@ -92,7 +85,7 @@ body {
     10px 20px 25px rgba(0, 0, 0, 0.4);
   user-select: none;
   cursor: pointer;
-  font-weight: 400;
+  font-size: 1.5rem;
   border-radius: 10px;
 }
 

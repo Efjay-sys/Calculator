@@ -7,8 +7,8 @@
     <title>Calculator</title>
 </head>
 <body>
-    <div class="calculator"></div>
-        <input type="text" id="display" disabled />
+    <div class="calculator">
+        <input type="text" id="display" readonly />
             <div class="buttons">
                 <button class="btn" onclick="clearDisplay()">C</button>
                 <button class="btn" onclick="deleteChar()">DEL</button>
@@ -34,6 +34,7 @@
                 <button class="btn" onclick="appendChar('.')">.</button>
                 <button class="btn equal" onclick="calculate()">=</button>              
             </div>
+    </div>
   
   <script src="script.js"></script>
 </body>
